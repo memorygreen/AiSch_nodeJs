@@ -1,0 +1,67 @@
+<!--240711(3)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1. 백엔드에서 넘어온 값을 HTML안에 표시
+        - {{변수}} -> 넘어온 변수를 사용하겠다!
+        - 백엔드에서 render을 실행할 때, 값을 넘겨준다!
+        - 언제? 태그 안에 변수값을 쓰고 싶을 때는 {{변수}} 를 활용하자!
+        
+    -->
+
+    <h1>메인페이지에 오신 걸 환영합니다!</h1>
+    <h2>{{name}}님 환영합니다!</h2>
+    
+    <!--240711(2)-->
+    <!--
+        2. HTML 안에서 직접 변수를 생성
+        사용법 : 중괄호 퍼센트 퍼센트 중괄호 // set 변수명  = 값
+        주의점! 변수를 만들 때는 set 명령어 확인하기! / 주석에 괄호 넣지 말기(에러!)
+    -->
+    {% set age = 20 %}
+    <p>{{age}}살입니다!</p>
+    
+    <!--
+        3. 조건문 문법(파이썬 문법 떠올리기!)
+        if -> if
+        else if -> elif
+        else -> else
+        ★ endif -> 조건문이 종료가 됐다는 걸 알려준다. 반드시!!!! 써줘야한다!!!
+    -->
+
+    {% set time = "오전" %}
+
+    {% if time == "오전"%}
+    <p>오전은 노드 수업입니다!</p>
+    {% elif time == "오후"%}
+    <p>오후는 머신러닝 수업입니다!</p>
+    {% else %}
+    <p>집에 가자!</p>
+    {% endif %}
+
+    <!--
+        반복문 -> 파이썬 반복문 떠올리기!
+        for i in arr 
+        endfor -> for문이 종료됐다는 걸 알려주자! 필수!! 
+    -->
+    {% set arr = [1,2,3,4,5] %}
+
+    <table border="1px solid black"> 
+        <tr>
+            <!--반복문을 통해서 td 태그 생성-->
+            {% for i in arr %}
+            <td border="1px solid black">{{i}}</td>
+            {% endfor %}
+        </tr>
+
+    </table>
+
+</body>
+</html>

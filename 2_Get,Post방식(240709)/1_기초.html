@@ -1,0 +1,38 @@
+<!--240709(1)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--
+        프론트에서 백엔드 서버에게 숫자 2개를 전달
+        백엔드에서는 두 수의 합을 구하기
+        form태그에서 기억할 내용은 딱 3가지!
+        1) action 속성 -> 데이터를 보낼 서버의 주소
+        2) name 속성 -> 각각의 (input) 태그의 값을 구분지어주는 구분자 역할 (서버가 굽려하기 위해)
+        3) value 속성 -> 태그의 입력된 값들이 저장되는 속성
+    -->
+        <form action="http://192.168.21.216:3000" method="get">
+            숫자1 : <input type="text" name="num1">
+
+            <select name="opr">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+
+
+            숫자2 : <input type="text" name="num2">
+            <input type="submit">
+        </form>
+
+
+        
+</body>
+</html>
